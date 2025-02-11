@@ -111,10 +111,10 @@ How to handle migrations using `Flask-Migrate`.
 
 ## **4. Examples and Best Practices**
 
-### **[examples/simple-app/](examples/simple-app/)**
+### **[examples/simple-app.md](examples/simple-app.md)**
 A minimal example of a Flask app with a User model.
 
-### **[examples/advanced-features/](examples/advanced-features/)**
+### **[examples/advanced-features.md](examples/advanced-features.md)**
 Examples demonstrating advanced configurations such as:
 - Custom Query Methods
 - Database Indexing
