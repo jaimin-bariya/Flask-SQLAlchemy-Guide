@@ -107,3 +107,50 @@ class User(db.Model):
 
 Understanding and using column attributes properly allows you to build robust and efficient databases. In the next section, we will cover relationships and more advanced features in Flask-SQLAlchemy.
 
+
+
+---
+
+
+# More Tips 
+
+If you **don't want to limit the string length** in SQLAlchemy, you have two options:
+
+### **✅ Option 1: Use `db.Text` Instead of `db.String()`**
+`db.Text` stores **long, unrestricted text** (like passwords, descriptions, or large text data).
+
+```python
+f_name = db.Column(db.String(30), nullable=False)  # Limited to 30 chars
+l_name = db.Column(db.String(30), nullable=False)  # Limited to 30 chars
+password = db.Column(db.Text, nullable=False)  # No character limit
+```
+✅ **`db.Text` is best for long, unknown-length strings.**
+
+<br/>
+<br/>
+---
+
+### **✅ Option 2: Use `db.String()` Without a Limit**
+If you don't provide a limit, **SQLAlchemy doesn't enforce one**, but the database might have a default limit.
+
+```python
+password = db.Column(db.String(), nullable=False)  # No explicit limit
+```
+⚠️ **Warning:**  
+- Some databases (like **SQLite**) might still impose an internal limit.  
+- **Using `db.Text` is safer** for long values.
+
+<br/>
+<br/>
+
+---
+<br/>
+<br/>
+
+### **🔥 Which One Should You Use?**
+- Use **`db.Text`** if you **truly** need unlimited text (like large descriptions, comments, or passwords).
+- Use **`db.String()` without a limit** if you **trust the database's default behavior**.
+
+---
+
+
