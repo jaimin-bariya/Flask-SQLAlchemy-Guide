@@ -128,6 +128,8 @@ password = db.Column(db.Text, nullable=False)  # No character limit
 
 <br/>
 <br/>
+
+
 ---
 
 ### **✅ Option 2: Use `db.String()` Without a Limit**
